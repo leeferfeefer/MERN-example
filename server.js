@@ -46,7 +46,18 @@ app.post('/submitUser', function(req, res) {
     }
     res.json({ message: 'User successfully added!' });
   });
-})
+});
+
+app.get('/viewUsers', function(req, res) {
+  console.log("Getting...");
+  UserSchema.find(function(err, users) {
+    if (err) {
+      res.send(err);
+    }
+    res.json(users);
+  })
+});
+
 
 //db config
 mongoose.Promise = require('bluebird');

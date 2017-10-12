@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { FormControl, Button } from 'react-bootstrap';
 
 const serverAddress = "http://localhost:8180";
@@ -78,6 +79,9 @@ export default class HomePage extends React.Component {
             Submit
           </Button>
         </form>
+        <p>
+          <Link to="/viewUsers">View list of users</Link>
+        </p>
       </div>
     );
   }

@@ -16,10 +16,6 @@ export default class HomePage extends React.Component {
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
 
-  componentDidMount() {
-    console.log("PROPS", this.props);
-  }
-
   handleFirstNameChange(event) {
     this.setState({firstNameValue: event.target.value});
   }

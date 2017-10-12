@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 
 export default class NotFoundPage extends React.Component {
 
-  componentDidMount() {
-    console.log("PROPS", this.props);
-  }
-
-
   render() {
     return (
       <div className="not-found">

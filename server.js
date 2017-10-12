@@ -3,10 +3,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var cors = require('cors');
 
-// initialize the server and configure support for ejs templates
 const app = express();
-// app.set('view engine', 'ejs');
-// app.set('views', path.join(__dirname, '../views'));
 
 // define the folder that will be used for static assets
 // app.use(Express.static(path.join(__dirname, '../static')));

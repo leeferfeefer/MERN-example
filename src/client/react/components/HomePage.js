@@ -58,7 +58,7 @@ export default class HomePage extends React.Component {
 
       <div>
         <h1>
-          Welcome to SnuTeam6, bitchezzzz
+          Welcome to SnuTeam6
         </h1>
         <h4>
           Fill in fields and send to database

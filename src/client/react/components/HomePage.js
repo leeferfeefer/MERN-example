@@ -31,15 +31,14 @@ export default class HomePage extends React.Component {
   handleOnSubmit(event) {
     event.preventDefault();
 
-    let firstName = this.state.firstNameValue.trim();
-    let lastName = this.state.lastNameValue.trim();
-    if (!firstName || !lastName) {
+    let firstNameValue = this.state.firstNameValue.trim();
+    let lastNameValue = this.state.lastNameValue.trim();
+    if (!firstNameValue || !lastNameValue) {
       alert("You must fill out both fields!");
       return;
     }
-    let submitUserURI = serverAddress+"/submitUser";
-
-    axios.post(submitUserURI, {first : firstName, last : lastName})
+    let data = {firstName : firstNameValue, lastName : lastNameValue};
+    axios.post(serverAddress+"/submitUser", data)
     .then(res => {
       alert(res.data.message);
       this.clearFields();

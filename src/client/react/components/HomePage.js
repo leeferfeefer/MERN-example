@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { FormControl, Button } from 'react-bootstrap';
 
+const serverAddress = "http://localhost:8180";
 
 export default class HomePage extends React.Component {
   constructor(props) {
@@ -37,14 +38,12 @@ export default class HomePage extends React.Component {
       console.log("BLANK!");
       return;
     }
-    let submitUserURI = this.props.location.pathname+"/submitUser";
+    let submitUserURI = serverAddress+"/submitUser";
 
-    axios.post(submitUserURI, {firstName : firstName, lastName : lastName})
+    axios.post(submitUserURI, {first : firstName, last : lastName})
     .then(res => {
-      // this.setState({ data: res });
-
+      alert(res.data.message);
       console.log("RESPONSE: ", res);
-
     })
     .catch(err => {
       console.log("Error submitting user to database...");

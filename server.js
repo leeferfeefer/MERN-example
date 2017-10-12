@@ -33,6 +33,10 @@ app.get('/', function(req, res) {
   res.json({ message: 'Server Initialized!'});
 });
 
+app.post('/submitUser', function(req, res) {
+  console.log("POSTING....", req.body);
+  res.json({ message: 'User successfully added!' });
+})
 
 //db config
 var mongoDB = 'mongodb://leeferfeefer:testtest@ds117625.mlab.com:17625/snuteam6';

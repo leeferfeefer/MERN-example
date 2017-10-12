@@ -28,14 +28,17 @@ export default class HomePage extends React.Component {
     this.setState({lastNameValue: event.target.value});
   }
 
+  clearFields() {
+    this.setState({firstNameValue: "", lastNameValue: ""});
+  }
+
   handleOnSubmit(event) {
     event.preventDefault();
-    console.log("Submitting...");
 
     let firstName = this.state.firstNameValue.trim();
     let lastName = this.state.lastNameValue.trim();
     if (!firstName || !lastName) {
-      console.log("BLANK!");
+      alert("You must fill out both fields!");
       return;
     }
     let submitUserURI = serverAddress+"/submitUser";
@@ -43,18 +46,16 @@ export default class HomePage extends React.Component {
     axios.post(submitUserURI, {first : firstName, last : lastName})
     .then(res => {
       alert(res.data.message);
-      console.log("RESPONSE: ", res);
+      this.clearFields();
     })
     .catch(err => {
       console.log("Error submitting user to database...");
       console.error(err);
     });
-
   }
 
   render() {
     return (
-
       <div>
         <h1>
           Welcome to SnuTeam6

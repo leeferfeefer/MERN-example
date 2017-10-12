@@ -6,7 +6,10 @@ var Schema = mongoose.Schema;
 
 //TODO: Validation
 //Server side validation
-var userSchema = new Schema({
+var userModelSchema = new Schema({
     firstName: String,
-    lastName: Date
+    lastName: String
 });
+
+// var userModel = ;
+module.exports = mongoose.model('UserModel', userModelSchema)

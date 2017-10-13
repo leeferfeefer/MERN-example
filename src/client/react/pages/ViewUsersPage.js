@@ -2,9 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
 
+import UserTableRow from '../components/UserTableRow';
+
 const serverAddress = "http://localhost:8180";
 
-export default class ViewUsers extends React.Component {
+export default class ViewUsersPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -26,9 +28,23 @@ export default class ViewUsers extends React.Component {
 
   render() {
     return (
-        <div>
-
-        </div>
+      <Table striped bordered condensed hover>
+        <thead>
+          <tr>
+           <th>#</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+          </tr>
+       </thead>
+       <tbody>
+         {this.state.users.map((user, index) => {
+           return (<UserTableRow
+              index={index}
+              user={user}
+           />)
+         })}
+       </tbody>
+      </Table>
     );
   }
 }

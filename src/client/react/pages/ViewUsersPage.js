@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Table } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import UserTableRow from '../components/UserTableRow';
 
@@ -28,23 +29,28 @@ export default class ViewUsersPage extends React.Component {
 
   render() {
     return (
-      <Table striped bordered condensed hover>
-        <thead>
-          <tr>
-           <th>#</th>
-           <th>First Name</th>
-           <th>Last Name</th>
-          </tr>
-       </thead>
-       <tbody>
-         {this.state.users.map((user, index) => {
-           return (<UserTableRow
-              index={index}
-              user={user}
-           />)
-         })}
-       </tbody>
-      </Table>
+      <div>
+        <p>
+          <Link to="/">Go to homepage</Link>
+        </p>
+        <Table striped bordered condensed hover>
+          <thead>
+            <tr>
+             <th>#</th>
+             <th>First Name</th>
+             <th>Last Name</th>
+            </tr>
+         </thead>
+         <tbody>
+           {this.state.users.map((user, index) => {
+             return (<UserTableRow
+                index={index}
+                user={user}
+             />)
+           })}
+         </tbody>
+        </Table>
+      </div>
     );
   }
 }

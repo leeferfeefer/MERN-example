@@ -6,3 +6,7 @@ Steps:
 
 
 NOTE: The backend is using mLab as a frontend for the MongoDB database. In development, it does not have redundancy detection. It will add data even if it already exists.
+
+
+
+![alt text](https://i.imgur.com/vvutb.jpg)

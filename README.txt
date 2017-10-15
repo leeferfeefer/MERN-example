@@ -9,4 +9,3 @@ NOTE: The backend is using mLab as a frontend for the MongoDB database. In devel
 
 
 
-![alt text](https://i.imgur.com/vvutb.jpg)
